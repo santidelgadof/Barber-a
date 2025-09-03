@@ -239,7 +239,7 @@
   <!-- Footer -->
   <footer class="py-10 text-center text-sm text-white bg-dark border-t border-slate-800">
     <p class="mt-2 text-xs text-gray-500 italic flex items-center justify-center gap-2">
-      Crafted with ♥ by 
+      © <span id="year"></span> · Crafted with ♥ by 
       <a href="https://www.linkedin.com/in/santiago-delgado-ferreiro-415113208/" 
          target="_blank" 
          class="text-[#C9A227] hover:text-white transition flex items-center gap-1">
@@ -249,12 +249,12 @@
   </footer>
   
 
-<!-- Botón flotante WhatsApp -->
-<a href="https://wa.me/34654262006?text=Hola!%20Quiero%20pedir%20cita%20para%20un%20corte%20✂️"
-   class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition"
-   target="_blank" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp fa-2x"></i>
-</a>
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/34654262006?text=Hola!%20Quiero%20pedir%20cita%20para%20un%20corte%20✂️"
+     class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition"
+     target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp fa-2x"></i>
+  </a>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
@@ -265,4 +265,5 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
