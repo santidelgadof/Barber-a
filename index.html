@@ -5,22 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>TOMO’S HAIR STUDIO · Barbería en A Coruña</title>
   <meta name="description" content="Barbería TOMO’S HAIR STUDIO en A Coruña. Reserva online, conoce a nuestro equipo y descubre nuestros servicios."/>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: { extend: { fontFamily: { sans: ['Inter'] }, colors: { brand: { DEFAULT: '#0ea5e9', dark:'#0369a1' }}}}
+      theme: { 
+        extend: { 
+          fontFamily: { 
+            sans: ['Inter', 'sans-serif'],
+            gothic: ['UnifrakturCook', 'cursive']
+          }, 
+          colors: { 
+            brand: { DEFAULT: '#EAB308', light: '#FACC15', dark: '#CA8A04' },
+            dark: '#010000',
+            graytxt: '#64748B',
+            premium: '#C9A227',
+            insta: '#D4AF37'
+          }
+        }
+      }
     }
   </script>
+
   <link rel="icon" href="logo.jpeg"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style> html { scroll-behavior: smooth; } </style>
 
   <!-- GLightbox -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 </head>
 <body class="bg-slate-50 text-slate-800">
+
   <!-- Header -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -40,26 +63,34 @@
     </div>
   </header>
 
-  <!-- Logo principal -->
-  <section class="relative bg-black flex items-center justify-center py-24">
+  <!-- Hero -->
+  <section class="relative bg-dark flex items-center justify-center py-24" data-aos="fade-up">
     <div class="text-center">
       <img src="logo.jpeg" alt="TOMO’S HAIR STUDIO" class="mx-auto w-64 h-auto shadow-xl"/>
       <div class="mt-6">
         <p class="text-white text-xl font-semibold">5.0 ★★★★★ (28 reseñas)</p>
       </div>
       <div class="mt-6 flex flex-wrap justify-center gap-4">
-        <a href="https://booksy.com/es-es/149282_tomos-hair-studio_barberia_60813_a-coruna?hl=es-ES" target="_blank" class="px-6 py-3 rounded-2xl bg-brand text-white font-semibold hover:bg-brand-dark">📅 Reservar en Booksy</a>
-        <a href="https://wa.me/34654262006?text=Hola!%20Quiero%20pedir%20cita%20para%20un%20corte%20✂️" target="_blank" class="px-6 py-3 rounded-2xl bg-green-500 text-white font-semibold hover:bg-green-600">💬 WhatsApp</a>
-        <a href="https://www.google.com/maps/place/TOMOS+HAIR+STUDIO/@43.3628472,-8.4137112,20.24z/data=!4m8!3m7!1s0xd2e7d4606245053:0x585a41ec2cbc55b3!8m2!3d43.3626049!4d-8.4138391!9m1!1b1!16s%2Fg%2F11xkxp3t96?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="px-6 py-3 rounded-2xl bg-yellow-500 text-white font-semibold hover:bg-yellow-600">⭐ Reseñas Google</a>
+     <a href="https://booksy.com/es-es/149282_tomos-hair-studio_barberia_60813_a-coruna?hl=es-ES" 
+        target="_blank" 
+        class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition">
+        📅 Reservar en Booksy
+     </a>
+     
+     <a href="https://www.google.com/maps/place/TOMOS+HAIR+STUDIO" 
+        target="_blank" 
+        class="px-6 py-3 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition">
+        ⭐ Reseñas Google
+     </a>
       </div>
     </div>
   </section>
 
   <!-- Sobre nosotros -->
-  <section id="nosotros" class="py-16 md:py-24 bg-white border-b border-slate-200">
+  <section id="nosotros" class="py-16 md:py-24 bg-white border-b border-slate-200" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Sobre nosotros</h2>
-      <p class="mt-4 text-lg text-slate-600">
+      <h2 class="text-3xl md:text-4xl font-gothic text-dark">Sobre nosotros</h2>
+      <p class="mt-4 text-lg text-graytxt">
         En <strong>TOMO’S HAIR STUDIO</strong> combinamos tradición y estilo urbano. 
         Nuestra misión es que cada cliente se sienta cómodo y salga con un look perfecto, 
         adaptado a su personalidad. Estamos en A Coruña desde 2024 ofreciendo cortes modernos, 
@@ -69,87 +100,42 @@
   </section>
 
   <!-- Promo -->
-  <section id="promo" class="py-16 bg-gradient-to-r from-brand to-brand-dark text-white text-center">
+  <section id="promo" class="py-16 bg-[#A8E6CF] text-dark text-center" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-extrabold">💈 Promo de la semana</h2>
+      <h2 class="text-3xl md:text-4xl font-gothic">Promo de la semana</h2>
       <p class="mt-4 text-lg">Corte + Barba por solo <span class="font-bold">20 €</span></p>
       <p class="opacity-80 mt-2">Válido hasta el domingo. ¡No te lo pierdas!</p>
     </div>
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-16 md:py-24 bg-white border-b border-slate-200">
+  <section id="servicios" class="py-16 md:py-24 bg-white border-b border-slate-200" data-aos="fade-up">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Servicios y precios</h2>
+      <h2 class="text-3xl md:text-4xl font-gothic text-dark">Servicios y precios</h2>
       <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="bg-slate-50 rounded-3xl p-6 shadow-sm">
+        <div class="bg-slate-50 rounded-3xl p-6 shadow-sm hover:shadow-lg transition" data-aos="fade-up">
           <h3 class="font-bold text-xl">Corte clásico</h3>
-          <p class="text-slate-600 mt-1">30 min</p>
-          <div class="text-3xl font-extrabold mt-4">15 €</div>
+          <p class="text-graytxt mt-1">30 min</p>
+          <div class="text-3xl font-extrabold mt-4 text-premium">15 €</div>
         </div>
-        <div class="bg-slate-50 rounded-3xl p-6 shadow-sm">
+        <div class="bg-slate-50 rounded-3xl p-6 shadow-sm hover:shadow-lg transition" data-aos="fade-up">
           <h3 class="font-bold text-xl">Corte + Barba</h3>
-          <p class="text-slate-600 mt-1">45 min</p>
-          <div class="text-3xl font-extrabold mt-4">23 €</div>
+          <p class="text-graytxt mt-1">45 min</p>
+          <div class="text-3xl font-extrabold mt-4 text-premium">23 €</div>
         </div>
-        <div class="bg-slate-50 rounded-3xl p-6 shadow-sm">
+        <div class="bg-slate-50 rounded-3xl p-6 shadow-sm hover:shadow-lg transition" data-aos="fade-up">
           <h3 class="font-bold text-xl">Color / Mechas</h3>
-          <p class="text-slate-600 mt-1">60 min</p>
-          <div class="text-3xl font-extrabold mt-4">30 €</div>
-        </div>
-      </div>
-      <p class="mt-6 text-slate-500 text-sm">💡 Más servicios disponibles al reservar en Booksy.</p>
-    </div>
-  </section>
-
-  <!-- Reseñas -->
-  <section id="reseñas" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Lo que opinan nuestros clientes</h2>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-3xl shadow p-6">
-          <p class="text-slate-600">“El mejor corte que me han hecho en A Coruña. Profesionales y atentos.”</p>
-          <p class="mt-4 font-semibold">– Juan P.</p>
-        </div>
-        <div class="bg-white rounded-3xl shadow p-6">
-          <p class="text-slate-600">“Ambiente muy agradable, recomendable 100%. Siempre salgo contento.”</p>
-          <p class="mt-4 font-semibold">– Carlos G.</p>
-        </div>
-        <div class="bg-white rounded-3xl shadow p-6">
-          <p class="text-slate-600">“Reservar por Booksy y confirmar por WhatsApp me hace la vida más fácil.”</p>
-          <p class="mt-4 font-semibold">– Miguel R.</p>
+          <p class="text-graytxt mt-1">60 min</p>
+          <div class="text-3xl font-extrabold mt-4 text-premium">30 €</div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Equipo -->
-  <section id="equipo" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Nuestro equipo</h2>
-      <div class="mt-8 grid md:grid-cols-2 gap-8">
-        <div class="flex gap-4 items-center">
-          <img src="perfil.jpg" alt="Martin" class="w-24 h-24 rounded-full object-cover"/>
-          <div>
-            <h3 class="font-bold text-xl">Martin</h3>
-            <p class="text-slate-600">Especialista en cortes modernos y fades.</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-center">
-          <img src="perfil.jpg" alt="Rober" class="w-24 h-24 rounded-full object-cover"/>
-          <div>
-            <h3 class="font-bold text-xl">Rober</h3>
-            <p class="text-slate-600">Experto en arreglos de barba y estilos clásicos.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  
   <!-- Galería -->
-  <section id="galeria" class="py-16 md:py-24 bg-white border-b border-slate-200">
+  <section id="galeria" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200" data-aos="fade-up">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Galería de trabajos</h2>
+      <h2 class="text-3xl md:text-4xl font-gothic text-dark text-center">Galería de trabajos</h2>
       <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
         <a href="galeria.jpeg" class="glightbox" data-gallery="trabajos">
           <img src="galeria.jpeg" class="rounded-xl shadow-md cursor-pointer hover:scale-105 transition-transform"/>
@@ -157,58 +143,60 @@
         <a href="galeria2.jpeg" class="glightbox" data-gallery="trabajos">
           <img src="galeria2.jpeg" class="rounded-xl shadow-md cursor-pointer hover:scale-105 transition-transform"/>
         </a>
-        <a href="galeria3.png" class="glightbox" data-gallery="trabajos">
-          <img src="galeria3.png" class="rounded-xl shadow-md cursor-pointer hover:scale-105 transition-transform"/>
+        <a href="galeria3.jpeg" class="glightbox" data-gallery="trabajos">
+          <img src="galeria3.jpeg" class="rounded-xl shadow-md cursor-pointer hover:scale-105 transition-transform"/>
+        </a>
+        <a href="galeria4.png" class="glightbox" data-gallery="trabajos">
+          <img src="galeria4.png" class="rounded-xl shadow-md cursor-pointer hover:scale-105 transition-transform"/>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Instagram -->
-  <section id="instagram" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
+  <section id="instagram" class="py-16 md:py-24 bg-white border-b border-slate-200" data-aos="fade-up">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Síguenos en Instagram</h2>
-      <p class="mt-2 text-slate-600">Descubre lo último de nuestro día a día en la barbería.</p>
+      <h2 class="text-3xl md:text-4xl font-gothic text-dark">Síguenos en Instagram</h2>
+      <p class="mt-2 text-graytxt">Descubre lo último de nuestro día a día en la barbería.</p>
   
       <div class="mt-8">
-        <!-- Carrusel de Instagram -->
         <rssapp-carousel id="tfbTD43ZRP56HTay"></rssapp-carousel>
         <script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script>
       </div>
   
       <a href="https://www.instagram.com/tomoshairstudio/" target="_blank"
-         class="mt-10 inline-flex px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold hover:opacity-90 transition">
-        📸 Ver en Instagram
+      class="mt-10 inline-flex px-6 py-3 rounded-2xl bg-insta text-dark font-semibold hover:bg-[#B8860B] transition">
+     📸 Ver en Instagram
       </a>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
+  <section id="faq" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Preguntas frecuentes</h2>
+      <h2 class="text-3xl md:text-4xl font-gothic text-dark">Preguntas frecuentes</h2>
       <div class="mt-8 space-y-6">
         <div>
           <h3 class="font-bold">¿Se puede pagar con tarjeta?</h3>
-          <p class="text-slate-600">Sí, aceptamos tarjeta y efectivo.</p>
+          <p class="text-graytxt">Sí, aceptamos tarjeta y efectivo.</p>
         </div>
         <div>
           <h3 class="font-bold">¿Ofrecéis servicio sin cita previa?</h3>
-          <p class="text-slate-600">Trabajamos principalmente con cita previa, pero si hay hueco te atenderemos.</p>
+          <p class="text-graytxt">Trabajamos principalmente con cita previa, pero si hay hueco te atenderemos.</p>
         </div>
         <div>
           <h3 class="font-bold">¿Hay parking cerca?</h3>
-          <p class="text-slate-600">Sí, tienes varias zonas de aparcamiento en las calles cercanas.</p>
+          <p class="text-graytxt">Sí, tienes varias zonas de aparcamiento en las calles cercanas.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="py-16 md:py-24 bg-white">
+  <section id="contacto" class="py-16 md:py-24 bg-white" data-aos="fade-up">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Contacto</h2>
-      <p class="mt-2 text-slate-600">Avenida Finisterre 119, Bajo, 15004 A Coruña</p>
+      <h2 class="text-3xl md:text-4xl font-gothic text-dark">Contacto</h2>
+      <p class="mt-2 text-graytxt">Avenida Finisterre 119, Bajo, 15004 A Coruña</p>
       <p class="mt-1"><strong>Tel:</strong> <a href="tel:654262006">654 262 006</a></p>
       <p class="mt-1"><strong>WhatsApp:</strong> <a href="https://wa.me/34654262006">Escríbenos</a></p>
       <div class="mt-6 rounded-3xl overflow-hidden border border-slate-200">
@@ -218,28 +206,30 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-10 text-center text-sm text-slate-500 bg-slate-50 border-t border-slate-200">
-    <p>&copy; <span id="year"></span> TOMO’S HAIR STUDIO · Hecho con ♥ en A Coruña</p>
+  <footer class="py-10 text-center text-sm text-white bg-dark border-t border-slate-800">
+    <p class="mt-2 text-xs text-gray-500 italic">
+      Crafted with ♥ by 
+      <a href="https://www.instagram.com/santi_delfe/" target="_blank" class="text-[#C9A227] hover:text-white transition">
+        @santi_delfe
+      </a>
+   </p>
   </footer>
+  
 
-  <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/34654262006?text=Hola!%20Quiero%20pedir%20cita%20para%20un%20corte%20✂️" 
-     class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition"
-     target="_blank" aria-label="WhatsApp">
-    <!-- Icono -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7 fill-current">
-      <path d="M16 .4C7.3.4.2 7.5.2 16.2c0 2.8.7 5.5 2 7.9L.1 31.6l7.6-2c2.3 1.3 5 2 7.9 2 8.7 0 15.8-7.1 15.8-15.8S24.7.4 16 .4zm0 28.8c-2.5 0-4.9-.7-7-2l-.5-.3-4.5 1.2 1.2-4.4-.3-.5c-1.3-2.1-2-4.5-2-7 0-7.4 6-13.4 13.4-13.4S29.4 8.6 29.4 16 23.4 29.2 16 29.2z"/>
-      <path d="M23.2 19.4c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.6-.2-.9.2s-1.1 1.2-1.4 1.5-.5.3-.9.1c-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8s.4-.5.6-.7c.2-.2.3-.4.5-.6.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7s-.9-2.3-1.2-3.2c-.3-.9-.7-.7-1-.7h-.9c-.3 0-.7.1-1 .5-.3.4-1.3 1.2-1.3 2.9s1.3 3.4 1.5 3.7c.2.3 2.5 3.9 6 5.4.8.4 1.4.6 1.9.8.8.3 1.5.3 2 .2.6-.1 2.3-1 2.6-1.9.3-.9.3-1.6.2-1.8-.1-.3-.4-.5-.8-.7z"/>
-    </svg>
-  </a>
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/34654262006?text=Hola!%20Quiero%20pedir%20cita%20para%20un%20corte%20✂️"
+   class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition"
+   target="_blank" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp fa-2x"></i>
+</a>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    const lightbox = GLightbox({ selector: '.glightbox' });
+    GLightbox({ selector: '.glightbox' });
+    AOS.init({ duration: 1000, once: true });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-
