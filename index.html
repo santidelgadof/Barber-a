@@ -44,32 +44,76 @@
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img src="logo_pestaña.png" alt="Logo" class="w-10 h-10 rounded-xl bg-slate-200"/>
-        <span class="font-extrabold tracking-tight">TOMO’S HAIR STUDIO</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#nosotros" class="hover:text-brand">Sobre nosotros</a>
-        <a href="#servicios" class="hover:text-brand">Servicios</a>
-        <a href="#equipo" class="hover:text-brand">Equipo</a>
-        <a href="#galeria" class="hover:text-brand">Galería</a>
-        <a href="#instagram" class="hover:text-brand">Instagram</a>
-        <a href="#faq" class="hover:text-brand">FAQ</a>
-        <a href="#contacto" class="hover:text-brand">Contacto</a>
-      </nav>
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <img src="logo_pestaña.png" alt="Logo" class="w-10 h-10 rounded-xl bg-slate-200"/>
+      <span class="font-extrabold tracking-tight">TOMO’S HAIR STUDIO</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#nosotros" class="hover:text-brand">Sobre nosotros</a>
+      <a href="#servicios" class="hover:text-brand">Servicios</a>
+      <a href="#equipo" class="hover:text-brand">Equipo</a>
+      <a href="#galeria" class="hover:text-brand">Galería</a>
+      <a href="#instagram" class="hover:text-brand">Instagram</a>
+      <a href="#faq" class="hover:text-brand">FAQ</a>
+      <a href="#contacto" class="hover:text-brand">Contacto</a>
+      
+      <!-- Botón Horario -->
+      <button id="toggleHorario"
+        class="ml-4 px-4 py-2 rounded-lg bg-dark text-white font-semibold hover:bg-brand transition flex items-center gap-2 animate-pulse">
+        <i class="fa-regular fa-clock"></i> Horario
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Panel desplegable -->
+<div id="panelHorario" 
+  class="fixed top-0 right-0 h-full w-72 bg-white shadow-2xl border-l border-slate-200 transform translate-x-full transition-transform duration-300 z-50">
+  
+  <div class="p-6">
+    <h2 class="text-2xl font-gothic text-dark mb-6 flex items-center gap-2">
+     <i class="fa-regular fa-clock"></i> Horario
+    </h2>
+    
+    <div class="space-y-4 text-graytxt">
+      <div><p class="font-semibold">Lunes</p><p>10:30 - 14:00<br>16:00 - 20:30</p></div>
+      <div><p class="font-semibold">Martes</p><p>10:30 - 14:00<br>16:00 - 20:30</p></div>
+      <div><p class="font-semibold">Miércoles</p><p>10:30 - 14:00<br>16:00 - 20:30</p></div>
+      <div><p class="font-semibold">Jueves</p><p>10:30 - 14:00<br>16:00 - 20:30</p></div>
+      <div><p class="font-semibold ">Viernes</p><p>10:30 - 14:00<br>16:00 - 20:30</p></div>
+      <div><p class="font-semibold">Sábado</p><p>10:30 - 14:00</p></div>
+      <div><p class="font-semibold">Domingo</p><p class="italic">Cerrado</p></div>
     </div>
-  </header>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  const btn = document.getElementById('toggleHorario');
+  const panel = document.getElementById('panelHorario');
+  let abierto = false;
+
+  btn.addEventListener('click', () => {
+    abierto = !abierto;
+    if (abierto) {
+      panel.classList.remove('translate-x-full');
+      panel.classList.add('translate-x-0');
+    } else {
+      panel.classList.add('translate-x-full');
+      panel.classList.remove('translate-x-0');
+    }
+  });
+</script>
+
 
   <!-- Hero -->
   <section class="relative bg-dark flex items-center justify-center py-24" data-aos="fade-up">
     <div class="text-center">
       <img src="logo.png" alt="TOMO’S HAIR STUDIO" class="mx-auto w-64 h-auto shadow-xl"/>
-      <div class="mt-6">
-        <p class="text-white text-xl font-semibold">5.0 ★★★★★ (28 reseñas)</p>
-      </div>
       <div class="mt-6 flex flex-wrap justify-center gap-4">
       <!-- Booksy -->
       <a href="https://booksy.com/es-es/149282_tomos-hair-studio_barberia_60813_a-coruna?hl=es-ES" 
@@ -127,9 +171,9 @@
           <div class="text-3xl font-extrabold mt-4 text-premium">23 €</div>
         </div>
         <div class="bg-slate-50 rounded-3xl p-6 shadow-sm hover:shadow-lg transition" data-aos="fade-up">
-          <h3 class="font-bold text-xl">Color / Mechas</h3>
+          <h3 class="font-bold text-xl">Corte semanal o rapado al mismo número</h3>
           <p class="text-graytxt mt-1">60 min</p>
-          <div class="text-3xl font-extrabold mt-4 text-premium">30 €</div>
+          <div class="text-3xl font-extrabold mt-4 text-premium">13 €</div>
         </div>
       </div>
     </div>
